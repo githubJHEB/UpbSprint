@@ -43,10 +43,10 @@
 
 .registro {
     grid-area: registro;  
-    background: #ffffff;
+    background: #41a5c9;  /* Change from #ffffff to #41a5c9 by: Jorge-Villalba**/
     float: right;
     width: 300px;
-    border: 2px solid #828c95;
+    border: 2px solid #828c95; /* New line add by: Jorge-Villalba**/
 }
 
 #vertical_navbar img{
@@ -61,13 +61,13 @@
 }
 
 #btn_Registro {
-    background: #434343;
+    background: #434343; /* Change from #a1e0e7; to #434343 by: Jorge-Villalba**/
     display: block;
     margin: 5px auto;
-    border: 3px solid #707070;
+    border: 3px solid #707070; /* Change from #3c6382; to #707070 by: Jorge-Villalba**/
     padding: 14px 40px;
     outline: none;
-    color:#4e4d4d;
+    color:#4e4d4d; /* Change from aqua; to #4e4d4d by: Jorge-Villalba**/
     border-radius: 10px;
     transition: 0.25s;
     cursor: pointer;
