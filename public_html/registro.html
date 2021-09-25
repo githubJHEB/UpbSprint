@@ -16,7 +16,7 @@ and open the template in the editor.
         <form id="form_registrarse">
             <h1>Formulario de registro</h1>
             <input id="in_nombre_usuario" type="text" maxlength="20" placeholder="Nombre de usuario"/>
-            <input id="in_contrasena" type="password" maxlength="20" placeholder="Contraseña"/>
+            <input id="in_contrasena" type="text" minlength="6"  maxlength="20" placeholder="Contraseña" onkeypress="return validar_contrasena(event)" />
             <input id="in_confirmar_contrasena" type="password" maxlength="20" placeholder="Confirmar contraseña"/>
             <button id="btn_registrar_usuario" type="button">Registrarse</button>
         </form>
