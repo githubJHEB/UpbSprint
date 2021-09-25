@@ -24,6 +24,7 @@ if (nombre.length<6){
 }    
 }
 function confirmar_contrasena(string){
+     var=2,
 }
 
 module.exports.validar_nombre_usuario=validar_nombre_usuario;
