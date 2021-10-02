@@ -1,7 +1,7 @@
 /*
  * To change this license header
  */
-
+let registros = [];
 function isLetter(string){ /*Start validation rutine. Check letter condition jheb*/
     var letras = "ABCDEGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     var valueToReturn = true;
@@ -106,6 +106,40 @@ function confirmar_contrasena(stringA, stringB){/*Confirmar_contrasena jheb*/
 
 //}
 
+function agregarRegistro(){
+	var usuario = document.getElementById("in_nombre_usuario").value;
+		var contrasena = document.getElementById("in_contrasena").value;
+		var confirmar_contrasena = document.getElementById("in_confirmar_contrasena").value;
+	function Persona(usuario, contrasena, confirmar_contrasena){
+		
+		this.usuario = usuario;
+		this.contrasena = contrasena;
+		this.confirmar_contrasena = confirmar_contrasena;
+}
+nuevoUsuario = new Persona(usuario, contrasena, confirmar_contrasena);
+	registros.push(nuevoUsuario);
+	console.log(registros);
+}
+    
+    
+function OrdenarArreglo(arreglo){
+    arreglo = arreglo.sort(function (a, b) {
+        if (a.usuario > b.usuario) {
+            return 1;
+        }
+        if (a.usuario< b.usuario) {
+            return -1;
+        }
+        return 0;
+    });
+
+     return arreglo;
+}
+  
+    
+module.exports.registros=registros;
+module.exports.OrdenarArreglo=OrdenarArreglo;
+module.exports.agregarRegistro=agregarRegistro;
 module.exports.validar_nombre_usuario=validar_nombre_usuario;
 module.exports.validar_contrasena=validar_contrasena;
 module.exports.confirmar_contrasena=confirmar_contrasena;
