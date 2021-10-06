@@ -1,5 +1,12 @@
 
+
 let registros=[];
+
+/*
+ * To change this license header
+ */
+let registros = [];
+
 function isLetter(string){ /*Start validation rutine. Check letter condition jheb*/
     var letras = "ABCDEGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     var valueToReturn = true;
@@ -35,7 +42,6 @@ function myFunction() {
     validar_nombre_usuario(entrada1);
     confirmar_contrasena(entrada, entrada2);
 }
-
 function validar_nombre_usuario(string){/*Validate nombre_usuario jheb*/
     if((string.value.length>=6 && string.value.length<=30) && isLetter(string)){
         //alert("validar_nombre_usuario true");
@@ -110,6 +116,40 @@ function OrdenarArreglo(arreglo){
 }
     
 
+function agregarRegistro(){
+	var usuario = document.getElementById("in_nombre_usuario").value;
+		var contrasena = document.getElementById("in_contrasena").value;
+		var confirmar_contrasena = document.getElementById("in_confirmar_contrasena").value;
+	function Persona(usuario, contrasena, confirmar_contrasena){
+		
+		this.usuario = usuario;
+		this.contrasena = contrasena;
+		this.confirmar_contrasena = confirmar_contrasena;
+}
+nuevoUsuario = new Persona(usuario, contrasena, confirmar_contrasena);
+	registros.push(nuevoUsuario);
+	console.log(registros);
+}
+    
+    
+function OrdenarArreglo(arreglo){
+    arreglo = arreglo.sort(function (a, b) {
+        if (a.usuario > b.usuario) {
+            return 1;
+        }
+        if (a.usuario< b.usuario) {
+            return -1;
+        }
+        return 0;
+    });
+
+     return arreglo;
+}
+  
+    
+module.exports.registros=registros;
+module.exports.OrdenarArreglo=OrdenarArreglo;
+module.exports.agregarRegistro=agregarRegistro;
 module.exports.validar_nombre_usuario=validar_nombre_usuario;
 module.exports.validar_contrasena=validar_contrasena;
 module.exports.confirmar_contrasena=confirmar_contrasena;
