@@ -1,7 +1,5 @@
-/*
- * To change this license header
- */
 
+let registros=[];
 function isLetter(string){ /*Start validation rutine. Check letter condition jheb*/
     var letras = "ABCDEGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     var valueToReturn = true;
@@ -76,36 +74,45 @@ function confirmar_contrasena(stringA, stringB){/*Confirmar_contrasena jheb*/
 
 
 
-////function validar_nombre_usuario(string){
-//}
 
-//function validar_contrasena(string){
-//     var key = string.keyCode,
-//  tecla = String.fromCharCode(key).toLowerCase(),
-//  letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789",
-//  especiales = [8, 37, 39, 46],
-//  tecla_especial = false;
+function agregarRegistro(){   
 
-//for (var i in especiales) {
-//  if (key == especiales[i]) {
-//    tecla_especial = true;
-//    break;
-//  }
-//}
+class Usuario{
+    constructor (usuario, contrasena,confirmar_contrasena) {
+    this.contrasena=contrasena;
+    this.confirmar_contrasena=confirmar_contrasena;
+    this.usuario=usuario;
+}
+}
+user = document.getElementById("in_nombre_usuario").value;
+password =  document.getElementById("in_contrasena").value;
+password2 =  document.getElementById("in_confirmar_contrasena").value;
 
-//if (letras.indexOf(tecla) == -1 && !tecla_especial) {
-//  return false;
-//}
-//if (nombre.length<6){
-//  return false;
-//}else{
-//  return true;
-//}
-//}
-//function confirmar_contrasena(string){
 
-//}
+const user1 = new Usuario(user,password, password2);
+//registro=[{usuario: user, contrasena: password, confirmar_contrasena:password2}];
+registros.push(user1);
+
+}
+
+function OrdenarArreglo(arreglo){
+    arreglo = arreglo.sort(function (a, b) {
+        if (a.usuario > b.usuario) {
+            return 1;
+        }
+        if (a.usuario< b.usuario) {
+            return -1;
+        }
+        return 0;
+    });
+
+     return arreglo;
+}
+    
 
 module.exports.validar_nombre_usuario=validar_nombre_usuario;
 module.exports.validar_contrasena=validar_contrasena;
 module.exports.confirmar_contrasena=confirmar_contrasena;
+module.exports.registros=registros;
+module.exports.agregarRegistro=agregarRegistro;
+module.exports.OrdenarArreglo=OrdenarArreglo;
